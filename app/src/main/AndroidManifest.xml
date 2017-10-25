@@ -8,7 +8,6 @@
     <application
         android:name=".WordsApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/icon"
         android:label="单词本"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

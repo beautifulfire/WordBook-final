@@ -13,9 +13,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by lsy on 2016/10/29.
- */
 public class MainActivity3 extends AppCompatActivity {
     private String strMeaning;
     private EditText get_English;

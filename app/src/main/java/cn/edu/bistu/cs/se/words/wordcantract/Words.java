@@ -3,11 +3,6 @@
     import android.net.Uri;
     import android.provider.BaseColumns;
 
-    /**
-     * 合约类(contract)
-     * 每个表一个合约类，这样访问数据库比较方便
-
-     */
     public class Words {
 
         //单词列表项
@@ -41,19 +36,13 @@
             }
         }
 
-        public static final String AUTHORITY = "cn.edu.bistu.cs.se.wordsprovider";//URI授权者
+        public static final String AUTHORITY = "cn.edu.bistu.cs.se.words";//URI授权者
 
         public Words() {
         }
 
-        //注意，接口BaseColumns接口有一个字段为"_ID",该字段对于ContentProvider非常重要
-
-        /**
-         * Word表共4个字段：_ID(从接口BaseColumns而来)、word、meaning、sample
-         */
         public static abstract class Word implements BaseColumns {
             public static final String TABLE_NAME = "words";//表名
-            //_ID字段：主键
             public static final String COLUMN_NAME_WORD = "word";//字段：单词
             public static final String COLUMN_NAME_MEANING = "meaning";//字段：单词含义
             public static final String COLUMN_NAME_SAMPLE = "sample";//字段：单词示例

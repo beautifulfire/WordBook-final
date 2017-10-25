@@ -1,1 +1,1 @@
-include ':app', ':contentresolved'
+include ':app', ':myapplication'

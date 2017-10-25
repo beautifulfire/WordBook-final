@@ -16,13 +16,8 @@ import java.util.Map;
 import cn.edu.bistu.cs.se.words.wordcantract.Words;
 
 
-/**
- * 数据库操作类，主要实现对数据库的增删改查。
- * 增：增加新单词及其含义等
- * 删：删除单词
- * 改：修改单词
- * 查：查询单词
- */
+//数据库操作类，主要实现对数据库的增删改查
+
 public class WordsDB {
     private static final String TAG = "myTag";
 
@@ -84,18 +79,17 @@ public class WordsDB {
 
 
         Cursor c = db.query(
-                Words.Word.TABLE_NAME,  // The table to query
-                projection,                               // The columns to return
-                null,                                // The columns for the WHERE clause
-                null,                            // The values for the WHERE clause
-                null,                                     // don't group the rows
-                null,                                     // don't filter by row groups
-                sortOrder                                 // The sort order
+                Words.Word.TABLE_NAME,
+                projection,
+                null,
+                null,
+                null,
+                null,
+                sortOrder
         );
 
         return ConvertCursor2WordList(c);
     }
-
 
 
     //将游标转化为单词列表

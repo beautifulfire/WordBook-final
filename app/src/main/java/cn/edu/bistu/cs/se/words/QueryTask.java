@@ -1,10 +1,6 @@
 package cn.edu.bistu.cs.se.words;
 
-/**
- * Created by lsy on 2016/10/29.
- */
 import java.io.IOException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 
 import org.apache.http.HttpResponse;
@@ -19,9 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
-import android.nfc.Tag;
 import android.os.AsyncTask;
-import android.support.design.widget.TabLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -111,7 +105,6 @@ public class QueryTask extends AsyncTask<String, Void, String> {
                         if (basic.has("phonetic")) {
                             String phonetic = basic.getString("phonetic");
                             tv_result.setText(tv_result.getText() + "\n" + phonetic);
-
                         }
                         if (basic.has("explains")) {
                             String explains = basic.getString("explains");

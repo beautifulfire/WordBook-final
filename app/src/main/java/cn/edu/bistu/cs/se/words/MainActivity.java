@@ -53,15 +53,11 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -91,17 +87,13 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
     }
 
 
-    /**
-     * 更新单词列表
-     */
+    //更新单词列表
     private void RefreshWordItemFragment() {
         WordItemFragment wordItemFragment = (WordItemFragment) getFragmentManager().findFragmentById(R.id.wordslist);
         wordItemFragment.refreshWordsList();
     }
 
-    /**
-     * 更新单词列表
-     */
+    //更新单词列表
     private void RefreshWordItemFragment(String strWord) {
         WordItemFragment wordItemFragment = (WordItemFragment) getFragmentManager().findFragmentById(R.id.wordslist);
         wordItemFragment.refreshWordsList(strWord);
@@ -121,9 +113,6 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
                         String strMeaning = ((EditText) tableLayout.findViewById(R.id.txtMeaning)).getText().toString();
                         String strSample = ((EditText) tableLayout.findViewById(R.id.txtSample)).getText().toString();
 
-
-                        //既可以使用Sql语句插入，也可以使用使用insert方法插入
-                        // InsertUserSql(strWord, strMeaning, strSample);
                         WordsDB wordsDB=WordsDB.getWordsDB();
                         wordsDB.InsertUserSql(strWord, strMeaning, strSample);
 
@@ -185,7 +174,6 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
                         String strNewMeaning = ((EditText) tableLayout.findViewById(R.id.txtMeaning)).getText().toString();
                         String strNewSample = ((EditText) tableLayout.findViewById(R.id.txtSample)).getText().toString();
 
-                        //既可以使用Sql语句更新，也可以使用使用update方法更新
                         WordsDB wordsDB=WordsDB.getWordsDB();
                         wordsDB.UpdateUseSql(strId, strWord, strNewMeaning, strNewSample);
 
@@ -235,18 +223,11 @@ public class MainActivity extends AppCompatActivity implements WordItemFragment.
 
     }
 
-    /**
-     * 当用户在单词详细Fragment中单击时回调此函数
-     */
     @Override
     public void onWordDetailClick(Uri uri) {
 
     }
 
-    /**
-     * 当用户在单词列表Fragment中单击某个单词时回调此函数
-     * 判断如果横屏的话，则需要在右侧单词详细Fragment中显示
-     */
     @Override
     public void onWordItemClick(String id) {
 

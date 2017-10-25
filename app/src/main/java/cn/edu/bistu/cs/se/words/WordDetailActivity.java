@@ -6,9 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-/**
- *横屏显示全部单词
- */
+//横屏显示全部单词
 public class WordDetailActivity extends AppCompatActivity implements WordDetailFragment.OnFragmentInteractionListener{
 
     @Override
